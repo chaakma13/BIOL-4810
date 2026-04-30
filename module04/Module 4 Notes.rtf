@@ -2,7 +2,7 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red217\green11\blue5;}
 {\*\expandedcolortbl;;\cssrgb\c88946\c14202\c0;}
-\margl1440\margr1440\vieww16720\viewh10400\viewkind0
+\margl1440\margr1440\vieww30040\viewh18260\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 1. Download samples.csv file\
@@ -50,8 +50,32 @@ Download and put into module 4\
 \
 15. Upload and click Paste/Fetch Data. Copy and paste the above info into the data section. Title it header. Select tabular. Start. \
 \
-16. Search up \'91concatenate multiple datasets or collections. The header file should automatically appear. Run tool. Download.\
+16. Search up \'91concatenate multiple datasets or collections. The header file should automatically appear under concatenate dataset. Insert your filtered dataset. Run tool. Download.\
+\
+17. Search up \'93volcano plot.\'94 Insert the differential gene expression dataset collection. In FDR, select \'91column 7.\'92 In p value, select \'91column 6.\'92 In log fold, select \'91column 3.\'92 In labels column number, select \'91column 1.\'92\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
+18. Open Deseq results with excel. Press Ctrl A to select all the data. Go to Data \'97> Sort \'97> Click the up and down arrows next to \'91value\'92 and click log2 (FC). Delete all the values between the top 10 and bottom 10 values. Download. Upload into Galaxy.\
 \
+19. Change the Top10UpandDownFiles to a tabular file.\
+\
+20. Search up \'91Join two datasets side by side on a specified field.\'92 The first file should be the the Top10UpandDown. The second file should be the normalized count data. Select \'93Yes\'94 to keep the header lines. Run tool.\
+\
+21. Search up \'91cut columns from a table. Change \'91cut columns\'92 to \'93c8-c14\'94. Run tool. \
+\
+22. Search up heatmap2. Under data transformation, select \'93Log2(value+1) transform my data. Change the color (if you want).\
+\
+23. Search up \'93filter data on any column using simple expressions.\'94 Select the promicromonspora.gff file. Under \'93with the following condition,\'94 put \'93c3=\'91CDS\'92. Run tool\
+-removes everything from the gff that is not a coding sequence.\
+\
+24. Search up \'93cut columns from the table.\'94 Under cut columns, change it to c9.\
+\
+25. Search up \'93cut delimiters to TAB.\'94 Select \'92semicolons\'92 under where it says \'93convert all.\'94\
+\
+26. Search up \'93replace text in a specific column.\'94 In \'91In column,\'92 select \'93column 2.\'94 Under Find pattern, put \'93Parent=\'93. Run tool.\
+-column 2 has the gene name. Column 8 has the gene function.\
+\
+27. Search up \'93cut columns from the table.\'92 Under cut columns, put \'93c2,c8\'94. Run tool.\
+\
+28. Search up \'93join two datasets on a specified field.\'94 The first dataset should be the dataset you just cut. The second dataset should be the Top10UpandDown (tabular). Select \'93yes\'92 for keep the header lines.\
 }
